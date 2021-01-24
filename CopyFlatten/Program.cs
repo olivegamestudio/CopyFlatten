@@ -10,6 +10,13 @@ namespace CopyFlatten
             string dest = args[1];
             string pattern = args[2];
 
+            if (!Directory.Exists(dest))
+            {
+                // create the destination directory
+                Directory.CreateDirectory(dest);
+            }
+
+            // copy all files recursively into the destination directory
             foreach (string filename in Directory.GetFiles(source, pattern, SearchOption.AllDirectories))
             {
                 string filenameOnly = Path.GetFileName(filename);
