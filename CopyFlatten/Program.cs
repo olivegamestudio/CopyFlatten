@@ -6,6 +6,12 @@ namespace CopyFlatten
     {
         static void Main(string[] args)
         {
+            if (args.Length < 3)
+            {
+                System.Console.WriteLine("Usage: copyflatten <source> <destination> <pattern>");
+                return;
+            }
+
             string source = args[0];
             string dest = args[1];
             string pattern = args[2];
